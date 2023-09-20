@@ -21,20 +21,28 @@ function App() {
     )
 
   );
+
+  
   return (
+    
+  
+    
     <div className="App">
-      <Header/>
-      <RouterProvider router={router} /> 
+      <RouterProvider router={router}>
+      
+      </RouterProvider> 
     </div>
+  
   );
 }
 
 const Root = () => {
   return(
     <>
-    <diu>
+    <Header></Header>
+    <div>
       <Outlet/>
-    </diu>
+    </div>
     </>
     
   )

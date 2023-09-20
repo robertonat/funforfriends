@@ -1,4 +1,6 @@
 import './TicTacToeStyles.css';
+import { Link } from 'react-router-dom';
+
 const TicTacToeView = () => {
   document.title = "TicTacToe";
   return (
@@ -29,6 +31,8 @@ const TicTacToeView = () => {
           </tr>
         </table>
       </div>
+      <br/>
+      <Link to = "../">return home</Link>
     </div>
   );
 };
