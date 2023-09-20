@@ -14,11 +14,11 @@ const TicTacToeView = () => {
         <table>
           <tr>
             <td></td>
-            <td class="vert"></td>
+            <td class="vert"> O </td>
             <td></td>
           </tr>
           <tr>
-            <td class="hori"></td>
+            <td class="hori"> x </td>
             <td class="vert hori"></td>
             <td class="hori"></td>
           </tr>

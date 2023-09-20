@@ -1,8 +1,11 @@
 import './App.css';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, Outlet } from "react-router-dom";
+
+import { Header } from './components/Views'
 
 import {
-  TicTacToeContainer
+  TicTacToeContainer,
+  HomePageContainer
 } from './components/Containers'
 
 
@@ -10,8 +13,9 @@ import {
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<TicTacToeContainer/>}>
-        <Route element = {<TicTacToeContainer/>} />
+      <Route path="/" element={<Root/>}>
+        <Route index element={<HomePageContainer/>}/>
+        <Route path="/TTT" element = {<TicTacToeContainer/>} />
 
       </Route>
     )
@@ -19,9 +23,22 @@ function App() {
   );
   return (
     <div className="App">
+      <Header/>
       <RouterProvider router={router} /> 
     </div>
   );
+}
+
+const Root = () => {
+  return(
+    <>
+    <diu>
+      <Outlet/>
+    </diu>
+    </>
+    
+  )
+  
 }
 
 
