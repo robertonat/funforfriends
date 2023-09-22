@@ -1,38 +1,42 @@
 import './TicTacToeStyles.css';
 import { Link } from 'react-router-dom';
 
-const TicTacToeView = () => {
+const TicTacToeView = (props) => {
+  const { playOffline } = props;
   document.title = "TicTacToe";
   return (
     <div>
       <h2>Welcome to TicTacToe</h2>
-      <b>Would you like to play via online play or offline on the same screen?</b>
+      <b id="instructions">Would you like to play via online play or offline on the same screen?</b>
       <br />
-      <button>Play with online friend</button>
+      <button id="playOnlineButton">Play with online friend</button>
       <b>                        </b>
-      <button>Play offline</button>
+      <button onClick={playOffline} id="playOfflineButton">Play offline</button>
 
       <div>
-        <table>
-          <tr>
-            <td></td>
-            <td class="vert"> O </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td class="hori"> x </td>
-            <td class="vert hori"></td>
-            <td class="hori"></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="vert"></td>
-            <td></td>
-          </tr>
+        <table className='gameBoard'>
+          <tbody>
+            <tr >
+              <td></td>
+              <td className="vert"> O </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td className="hori"> x </td>
+              <td className="vert hori"></td>
+              <td className="hori"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td className="vert"></td>
+              <td></td>
+            </tr>
+          </tbody>
+
         </table>
       </div>
-      <br/>
-      <Link to = "../">return home</Link>
+      <br />
+      <Link to="../">return home</Link>
     </div>
   );
 };
